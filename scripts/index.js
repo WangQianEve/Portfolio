@@ -6,7 +6,6 @@ window.addEventListener("scroll", function(e) {
     let scrollPercentage = document.documentElement.scrollTop / (0.5 * document.documentElement.clientHeight);
     if (scrollPercentage >= 1 && clip) {
         clip = false;
-        console.log('clear clip path');
         $("#main").css("clip-path", "");
         return;
     }
@@ -15,6 +14,7 @@ window.addEventListener("scroll", function(e) {
         $('#main').css("clip-path", "url(#clip_q)");
         return;
     }
+    // console.log(scrollPercentage);
     let font_size = 5 + scrollPercentage * 800;
     let y = 33 + scrollPercentage * 50;
     $("#clip_q text").css("font-size", font_size+"vw");
