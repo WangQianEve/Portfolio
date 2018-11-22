@@ -1,0 +1,46 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: grid;
+  font-family: Source Sans Pro;
+}
+
+#welcome {
+  position: absolute;
+  background-image: url("../../images/skys/10pm.jpeg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+}
+#welcome #greeting {
+  font-size: 6vw;
+  font-weight: bold;
+  margin-top: 16vw;
+}
+#welcome #intro {
+  font-size: 3vw;
+  margin: 6vw 0;
+}
+#welcome #intro i {
+  font-size: 50%;
+}
+#welcome #intro span {
+  margin: 0 2vw;
+}
+#welcome h5 {
+  font-size: 1.5vw;
+  font-weight: lighter;
+}
+
+#main {
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  clip-path: url(#clip_q);
+}
+
+/*# sourceMappingURL=index.css.map */
