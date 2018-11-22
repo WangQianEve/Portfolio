@@ -11,18 +11,24 @@ html, body {
   background-image: url("../../images/skys/10pm.jpeg");
   background-size: cover;
   width: 100%;
-  height: 100%;
+  height: 150%;
   color: white;
   text-align: center;
 }
 #welcome #greeting {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin-top: 16vw;
   font-size: 6vw;
   font-weight: bold;
-  margin-top: 16vw;
 }
 #welcome #intro {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin-top: 30vw;
   font-size: 3vw;
-  margin: 6vw 0;
 }
 #welcome #intro i {
   font-size: 50%;
@@ -31,16 +37,21 @@ html, body {
   margin: 0 2vw;
 }
 #welcome h5 {
-  font-size: 1.5vw;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin-top: 40vw;
+  padding: 0 20vw;
+  font-size: 1.8vw;
   font-weight: lighter;
 }
 
 #main {
-  background-color: red;
-  width: 100%;
-  height: 100%;
   position: absolute;
-  clip-path: url(#clip_q);
+  background-color: red;
+  padding-top: 50%;
+  width: 100%;
+  height: 300%;
 }
 
 /*# sourceMappingURL=index.css.map */

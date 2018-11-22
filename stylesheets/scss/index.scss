@@ -3,13 +3,12 @@ $greeting-size: 6vw;
 $intro-size: 3vw;
 
 $greeting-top: 16vw;
-$intro-top: 6vw;
+$intro-top: 30vw;
 
 html, body {
   width: 100%;
   height: 100%;
   margin: 0;
-  //position: absolute;
   display: grid;
   font-family: $font-stack;
 }
@@ -19,15 +18,22 @@ html, body {
   background-image: url("../../images/skys/10pm.jpeg");
   background-size: cover;
   width: 100%;
-  height: 100%;
+  height: 150%;
   color: white;
   text-align: center;
   #greeting{
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin-top: $greeting-top;
     font-size: $greeting-size;
     font-weight: bold;
-    margin-top: $greeting-top;
   }
   #intro{
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin-top: $intro-top;
     i{
       font-size: 50%;
     }
@@ -35,18 +41,23 @@ html, body {
       margin: 0 2vw;
     }
     font-size: $intro-size;
-    margin: $intro-top 0;
   }
   h5{
-    font-size: 1.5vw;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin-top: 40vw;
+    padding: 0 20vw;
+    font-size: 1.8vw;
     font-weight: lighter;
   }
 }
 
 #main {
-  background-color: red;
-  width: 100%;
-  height: 100%;
   position: absolute;
-  clip-path: url(#clip_q);
+  //display: none;
+  background-color: red;
+  padding-top: 50%;
+  width: 100%;
+  height: 300%;
 }
