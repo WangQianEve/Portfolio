@@ -1,4 +1,4 @@
-$font-stack: Source Sans Pro;
+$font-stack: Lato; // Crimson Text;//, Source Sans Pro;
 $greeting-size: 6vw;
 $intro-size: 3vw;
 
@@ -6,7 +6,9 @@ $greeting-top: 16vw;
 $intro-top: 30vw;
 
 $m-lightgrey: #f6f6f6;
-
+div {
+  //border: red 1px solid;
+}
 html, body {
   width: 100%;
   height: 100%;
@@ -16,42 +18,49 @@ html, body {
 }
 
 #welcome {
-  position: absolute;
-  background-image: url("../../images/skys/10pm.jpeg");
-  background-size: cover;
+  position: fixed;
   width: 100%;
-  height: 150%;
+  height: 100%;
   color: white;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  #ph {
+    background-color: black;
+    height: 35vh;
+  }
   #greeting{
-    position: fixed;
-    left: 0;
-    right: 0;
-    margin-top: $greeting-top;
-    font-size: $greeting-size;
-    font-weight: bold;
+    display: flex;
+    span {
+      width: 300px;
+      flex-grow: 1;
+      background-color: black;
+      font-size: 50px;
+    }
+    #letter {
+      display: flex;
+      flex-direction: column;
+      div {
+        background-color: black;
+        flex-grow: 1;
+      }
+      img {
+        width: 51px;
+      }
+    }
+    #left {
+      text-align: right;
+      padding-right: 10px;
+    }
+    #right {
+      text-align: left;
+    }
   }
   #intro{
-    position: fixed;
-    left: 0;
-    right: 0;
-    margin-top: $intro-top;
-    i{
-      font-size: 50%;
-    }
-    span{
-      margin: 0 2vw;
-    }
-    font-size: $intro-size;
-  }
-  h5{
-    position: fixed;
-    left: 0;
-    right: 0;
-    margin-top: 40vw;
-    padding: 0 20vw;
-    font-size: 1.8vw;
-    font-weight: lighter;
+    background-color: black;
+    flex-grow: 1;
+    padding-top: 20vh;
+    font-size: 20px;
   }
 }
 
@@ -62,35 +71,62 @@ html, body {
   padding-top: 60vh;
   #content {
     .group {
-      //background: yellow;
       height: 900px;
+      padding-top: 100px;
       .subgroup {
-        padding-left: 25vw;
+        // each project
+        padding: 0 60px 0 160px;
         height: 400px;
+        min-width: 1024px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 400px;
+        }
+        .proj-text {
+          width: 400px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          height: 100%;
+          padding: 75px 0;
+          h2 {
+            font-weight: bold;
+
+          }
+          .description {
+            font-size: 1.5em;
+            flex-grow: 1;
+            text-align: right;
+          }
+          .tags {
+            span {
+              margin: 0 0.6em;
+            }
+            .proj-type {
+              font-weight: bold;
+            }
+            .design-type {
+              color: palevioletred;
+            }
+            .tech-type {
+              color: steelblue;
+            }
+          }
+        }
+        .proj-text-left {
+          align-items: flex-start;
+          .description {
+            text-align: left;
+          }
+        }
       }
       .bg-grey {
         background: $m-lightgrey;
       }
     }
   }
-  //height: 300%;
-  //#empty {
-  //  height: 60vh;
-  //}
-  //nav {
-  //  position: fixed;
-  //  width: 100%;
-  //  .navbar-right {
-  //    margin-left: auto;
-  //    a {
-  //      color: darkgray;
-  //    }
-  //    .active {
-  //      color: dimgrey;
-  //      background-color: #00000000;
-  //    }
-  //  }
-  //}
 }
 
 /* sidebar */

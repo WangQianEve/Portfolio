@@ -3,47 +3,54 @@ html, body {
   height: 100%;
   margin: 0;
   display: grid;
-  font-family: Source Sans Pro;
+  font-family: Lato;
 }
 
 #welcome {
-  position: absolute;
-  background-image: url("../../images/skys/10pm.jpeg");
-  background-size: cover;
+  position: fixed;
   width: 100%;
-  height: 150%;
+  height: 100%;
   color: white;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+#welcome #ph {
+  background-color: black;
+  height: 35vh;
 }
 #welcome #greeting {
-  position: fixed;
-  left: 0;
-  right: 0;
-  margin-top: 16vw;
-  font-size: 6vw;
-  font-weight: bold;
+  display: flex;
+}
+#welcome #greeting span {
+  width: 300px;
+  flex-grow: 1;
+  background-color: black;
+  font-size: 50px;
+}
+#welcome #greeting #letter {
+  display: flex;
+  flex-direction: column;
+}
+#welcome #greeting #letter div {
+  background-color: black;
+  flex-grow: 1;
+}
+#welcome #greeting #letter img {
+  width: 51px;
+}
+#welcome #greeting #left {
+  text-align: right;
+  padding-right: 10px;
+}
+#welcome #greeting #right {
+  text-align: left;
 }
 #welcome #intro {
-  position: fixed;
-  left: 0;
-  right: 0;
-  margin-top: 30vw;
-  font-size: 3vw;
-}
-#welcome #intro i {
-  font-size: 50%;
-}
-#welcome #intro span {
-  margin: 0 2vw;
-}
-#welcome h5 {
-  position: fixed;
-  left: 0;
-  right: 0;
-  margin-top: 40vw;
-  padding: 0 20vw;
-  font-size: 1.8vw;
-  font-weight: lighter;
+  background-color: black;
+  flex-grow: 1;
+  padding-top: 20vh;
+  font-size: 20px;
 }
 
 #main {
@@ -54,10 +61,52 @@ html, body {
 }
 #main #content .group {
   height: 900px;
+  padding-top: 100px;
 }
 #main #content .group .subgroup {
-  padding-left: 25vw;
+  padding: 0 60px 0 160px;
   height: 400px;
+  min-width: 1024px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#main #content .group .subgroup img {
+  width: 400px;
+}
+#main #content .group .subgroup .proj-text {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 100%;
+  padding: 75px 0;
+}
+#main #content .group .subgroup .proj-text h2 {
+  font-weight: bold;
+}
+#main #content .group .subgroup .proj-text .description {
+  font-size: 1.5em;
+  flex-grow: 1;
+  text-align: right;
+}
+#main #content .group .subgroup .proj-text .tags span {
+  margin: 0 0.6em;
+}
+#main #content .group .subgroup .proj-text .tags .proj-type {
+  font-weight: bold;
+}
+#main #content .group .subgroup .proj-text .tags .design-type {
+  color: palevioletred;
+}
+#main #content .group .subgroup .proj-text .tags .tech-type {
+  color: steelblue;
+}
+#main #content .group .subgroup .proj-text-left {
+  align-items: flex-start;
+}
+#main #content .group .subgroup .proj-text-left .description {
+  text-align: left;
 }
 #main #content .group .bg-grey {
   background: #f6f6f6;
