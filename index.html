@@ -5,92 +5,273 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed" rel="stylesheet">
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">-->
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./stylesheets/css/index.css">
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>-->
     <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>-->
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/ScrollMagic.min.js'></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>Qian Wang</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <div id="main">
-    <!--Nav Bar -->
-    <nav class="col-sm-3 bs-docs-sidebar">
-        <ul id="sidebar" class="nav nav-stacked">
-            <li>
-                <a href="#Projects">Projects</a>
-                <ul class="nav nav-stacked">
-                    <li><a href="#proj1">Sub-Group 1</a></li>
-                    <li><a href="#proj2">Sub-Group 2</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#About">About</a>
-            </li>
-            <li>
-                <a href="#Play">Play</a>
-                <!--<ul class="nav nav-stacked">-->
-                    <!--<li><a href="#GroupCSub1">Sub-Group 1</a></li>-->
-                    <!--<li><a href="#GroupCSub2">Sub-Group 2</a></li>-->
-                <!--</ul>-->
-            </li>
-        </ul>
-    </nav>
 
     <!--Main Content -->
     <div id="content">
-        <section id="Projects" class="group">
-            <div id="proj1" class="subgroup proj bg-white">
-                <img class="col-sm-3" src="./images/proj/ksi.png"/>
-                <div class="proj-text">
-                    <h2>01 | Index Sense</h2>
-                    <i class="description">Work like an invisible touchpad over keyboard surface</i>
-                    <div class="tags">
-                        <b class="proj-type">Interaction Technique</b><span> | </span>
-                        <i class="design-type">Gesture Design</i><span> | </span>
-                        <i class="tech-type">Computer Vision</i>
-                    </div>
-                </div>
-            </div>
-            <div id="proj2" class="subgroup proj bg-grey">
-                <div class="proj-text proj-text-left">
-                    <h2>02 | Force Board</h2>
-                    <i class="description">Work like an invisible touchpad over keyboard surface</i>
-                    <div class="tags">
-                        <b class="proj-type">Interaction Technique</b><span> | </span>
-                        <i class="design-type">Gesture Design</i><span> | </span>
-                        <i class="tech-type">Computer Vision</i>
-                    </div>
-                </div>
-                <img class="col-sm-3" src="./images/proj/forceboard-cover.png" style="top:0"/>
-            </div>
-        </section>
         <section id="About" class="group">
-            <h3>About</h3>
+            <div id="about-title" class="subgroup" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-center">
+                <h1>ABOUT</h1>
+            </div>
+            <div id="about1" class="subgroup">
+                <div id="myPic" data-aos="fade-up" data-aos-duration="1000"  data-aos-anchor-placement="top-center">
+                    <img src="images/proj/me.png">
+                </div>
+                <div data-aos="fade-up" data-aos-duration="1000"  data-aos-anchor-placement="top-center">
+                    <p >Hello! My name is Qian Wang. I’m currently studying Human-Compute-Interaction. And I have a Bachlor’s degree in 💻Computer Science.</p>
+                    <p >My 🔥passion is exploring future experience and solving problems for people with technology!</p>
+                    <p >And I love 🎭theatre art a lot~</p>
+                </div>
+                <div class="right-space"></div>
+            </div>
+            <div id="about2"class="subgroup">
+                <div id="tree-content">
+                    <div class="title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">What can I do ?</div>
+                    <div id="skill-content">
+                        <div class="skill-left skill-group">
+                            <div class="skill-item" id="skill-tech" data-aos="fade-up" data-aos-duration="1000">Technical</div>
+                            <div class="skill-item" style="color: #6106AC" data-aos="fade-up" data-aos-duration="1000" >
+                                <div>
+                                    <div class="skill">Development</div>
+                                    <div class="skill-detail">Web front-end / Web back-end / Mobile app / Desktop app / Embedded System / 3D engine</div>
+                                </div>
+                                <div class="skill-line"></div>
+                            </div>
+                            <div  class="skill-item" style="color: #3A28BF" data-aos="fade-up" data-aos-duration="1000" >
+                                <div>
+                                    <div class="skill">Techinical Research</div>
+                                    <div class="skill-detail">Machine learning /  Computer Vision / Data mining</div>
+                                </div>
+                                <div class="skill-line"></div>
+                            </div>
+                            <div class="skill-item" style="color: #266AD0" data-aos="fade-up" data-aos-duration="1000" >
+                                <div>
+                                    <div class="skill">Languages</div>
+                                    <div class="skill-detail">Python / C++ (C#) / Java / HTML+CSS+Javascript / Verilog / VHDL</div>
+                                </div>
+                                <div class="skill-line"></div>
+                            </div>
+                        </div>
+                        <div class="proj-space"></div>
+                        <div id="tree" data-aos="fade-up" data-aos-duration="1000" >
+                            <img src="images/proj/color-tree.png">
+                        </div>
+                        <div class="proj-space"></div>
+                        <div class="skill-right skill-group">
+                            <div class="skill-item" id="skill-design" data-aos="fade-up" data-aos-duration="1000">Design</div>
+                            <div class="skill-item" style="color: #6106AC" data-aos="fade-up" data-aos-duration="1000" >
+                                <div class="skill-line"></div>
+                                <div>
+                                    <div class="skill">Evaluation</div>
+                                    <div class="skill-detail">Heuristic Evaluation / A/B Testing / Wizard of Oz / Think Alouds / Experience Prototyping / Five Second Test</div>
+                                </div>
+                            </div>
+                            <div class="skill-item" style="color: #BE3EC0" data-aos="fade-up" data-aos-duration="1000" >
+                                <div class="skill-line"></div>
+                                <div>
+                                    <div class="skill">Prototyping</div>
+                                    <div class="skill-detail">Sketching / Wireframe / Interaction Prototyping / Photoshop / Video / Physical Prototyping</div>
+                                </div>
+                            </div>
+                            <div class="skill-item" style="color: #BC336B" data-aos="fade-up" data-aos-duration="1000" >
+                                <div class="skill-line"></div>
+                                <div>
+                                    <div class="skill">Design Methods</div>
+                                    <div class="skill-detail">Personas / Parallel Design / Customer Journey Maps</div>
+                                </div>
+                            </div>
+                            <div class="skill-item" style="color: #E05F5F" data-aos="fade-up" data-aos-duration="1000" >
+                                <div class="skill-line"></div>
+                                <div>
+                                    <div class="skill">User Research</div>
+                                    <div class="skill-detail">Think Alouds / Speed Dating / Contextual Inquiry / Affinity Diagram / Data Analysis</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-space"></div>
+            </div>
+            <div id="about3" class="subgroup">
+                <div class="title" data-aos="fade-up" data-aos-duration="1000" >What interests me most ?</div>
+                <div id="topic-content" data-aos="fade-up" data-aos-duration="1000" >
+                    <div class="topic">
+                        <div class="topic-icon"><img src="images/proj/Group%2011.png"></div>
+                        <div class="topic-title">MultiModal Interaction</div>
+                        <div class="topic-subtitle">Voice / Tangible / etc</div>
+                    </div>
+                    <div class="topic">
+                        <div class="topic-icon"><img src="images/proj/Group%2012.png"></div>
+                        <div class="topic-title">Human-AI Interaction</div>
+                        <div class="topic-subtitle">Mixed Initiate / Ethics / etc</div>
+                    </div>
+                    <div class="topic">
+                        <div class="topic-icon"><img src="images/proj/Group%2013.png"></div>
+                        <div class="topic-title">Ubiquitous Computing</div>
+                        <div class="topic-subtitle">IoT / Wearables / etc</div>
+                    </div>
+                    <div class="topic">
+                        <div class="topic-icon"><img src="images/proj/Group%2014.png"></div>
+                        <div class="topic-title">Augmented Reality</div>
+                        <div class="topic-subtitle"></div>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section id="GroupC" class="group">
-            <h3>Play</h3>
+        <section id="Work" class="group">
+            <div id="work_title" class="subgroup" data-aos="fade-up" data-aos-duration="1000" >
+                <h1>WORK</h1>
+            </div>
+            <div id="speech_explosion" class="subgroup proj bg-white">
+                <img class="desktop-img" src="./images/proj/speech_explosion.webp" style="object-fit: none" data-aos="fade-up" data-aos-duration="1000"/>
+                <div class="proj-space"></div>
+                <div class="proj-text" data-aos="fade-up" data-aos-duration="1000">
+                    <h2 >Speech Explosion</h2>
+                    <i class="description">A voice-interactive projection system with infrared detector.</i>
+                    <div class="tags">
+                        <i class="design-type">Canvas Animation</i><span> | </span>
+                        <i class="tech-type">Arduino</i>
+                    </div>
+                </div>
+                <img class="col-sm-3 mobile-img" src="./images/proj/speech_explosion.webp" style="object-fit: none" data-aos="fade-up" data-aos-duration="1000"/>
+                <div class="right-space"></div>
+            </div>
+            <div id="force_board" class="subgroup proj bg-grey">
+                <div class="proj-text proj-text-left">
+                    <h2 data-aos="fade-up" data-aos-duration="1000" >Force Board</h2>
+                    <i class="description" data-aos="fade-up" data-aos-duration="1000">Subtle Text Entry Technique Leveraging Pressure</i>
+                    <div class="tags" data-aos="fade-up" data-aos-duration="1000" >
+                        <i class="tech-type">Google Glass App</i><span> | </span>
+                        <i class="design-type">iPhone Force Touch</i><span> | </span>
+                        <i class="proj-type">CHI 2018</i>
+                    </div>
+                </div>
+                <div class="proj-space"></div>
+                <img class="col-sm-3" src="./images/proj/forceboard-cover.png" data-aos="fade-up" data-aos-duration="1000" style="align-self: flex-start"/>
+                <div class="right-space"></div>
+            </div>
+            <div id="labeling_tool" class="subgroup proj bg-white">
+                <img class="desktop-img" src="./images/proj/labeling_comp.png" data-aos="fade-up" data-aos-duration="1000"/>
+                <div class="proj-space"></div>
+                <div class="proj-text" data-aos="fade-up" data-aos-duration="1000">
+                    <h2>Fast Point Cloud Labeling Method</h2>
+                    <i class="description">Fast laser point cloud labeling method for autonomous driving technology.</i>
+                    <div class="tags">
+                        <i class="design-type">Human AI Co-operation</i><span> | </span>
+                        <i class="tech-type">Desktop App</i><span> | </span>
+                        <i class="proj-type">With Patent</i>
+                    </div>
+                </div>
+                <img class="col-sm-3 mobile-img" src="./images/proj/labeling_comp.png" data-aos="fade-up" data-aos-duration="1000"/>
+                <div class="right-space"></div>
+            </div>
+            <div id="scotty_bus_stop" class="subgroup proj bg-grey">
+                <div class="proj-text proj-text-left">
+                    <h2 data-aos="fade-up" data-aos-duration="1000" >Scotty Bus Stop</h2>
+                    <i class="description" data-aos="fade-up" data-aos-duration="1000" >User research driven design for shuttle/escort service of Carnegie Mellon University.</i>
+                    <div class="tags" data-aos="fade-up" data-aos-duration="1000" >
+                        <i class="design-type">Multiple User Research Methods</i>
+                    </div>
+                </div>
+                <div class="proj-space"></div>
+                <img class="col-sm-3" src="./images/proj/scotty_bus_stop.png" data-aos="fade-up" data-aos-duration="1000"/>
+                <div class="right-space"></div>
+            </div>
+            <div id="ksi" class="subgroup proj bg-white">
+                <img class="desktop-img" src="./images/proj/ksi.png" data-aos="fade-up" data-aos-duration="1000"/>
+                <div class="proj-space"></div>
+                <div class="proj-text" data-aos="fade-up" data-aos-duration="1000">
+                    <h2 >Index Sense</h2>
+                    <i class="description">Use cameras to make the keyboard surface work like a touch pad.</i>
+                    <div class="tags">
+                        <i class="tech-type">Computer Vision</i>
+                    </div>
+                </div>
+                <img class="col-sm-3 mobile-img" src="./images/proj/ksi.png" data-aos="fade-up" data-aos-duration="1000"/>
+                <div class="right-space"></div>
+            </div>
+
+        </section>
+        <section id="Play" class="group">
+            <div class="subgroup" data-aos="fade-up" data-aos-duration="1000" >
+                <h1>PLAY</h1>
+            </div>
+            <div class="subgroup">
+                <h3 data-aos="fade-up" data-aos-duration="1000" >Side projects, design practices and others!</h3>
+                <div id="cards">
+                    <div class="card low" id="hi-jack" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+                        <img class="image" src="images/proj/bubble%20film.png"/>
+                        <div class="name">Time and Location Based Movie Searcher</div>
+                    </div>
+                    <div class="card high" id="bubble" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+                        <img class="image" src="images/proj/chillcool.png"/>
+                        <div class="name">Online Study Tool</div>
+                    </div>
+                    <div class="card large" id="labeling" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+                        <img class="image" src="images/proj/hca.png" />
+                        <div class="name" >Hand Controlled Animation</div>
+                    </div>
+                    <div class="card large mid" id="n3" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+                        <img class="image" src="images/proj/drama.png"/>
+                        <div class="name">Drama Play: The Twelfth Night</div>
+                    </div>
+                    <div class="card high" id="n2" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+                        <img class="image" src="images/proj/red.png"></img>
+                        <div class="name">Poster Design "Meant To Be"</div>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 </div>
 
-<header id="welcome" style="transform: scale(1);">
+<!--Nav Bar -->
+<nav class="bs-docs-sidebar">
+    <div id="name">Qian <br/>Wang</div>
+    <ul id="sidebar" class="nav nav-stacked">
+        <li>
+            <a href="#About">About</a>
+        </li>
+        <li>
+            <a href="#Work">Work</a>
+        </li>
+        <li>
+            <a href="#Play">Play</a>
+        </li>
+    </ul>
+    <div id="sign">@Qian Wang 2018</div>
+</nav>
+
+<div id="welcome" style="transform: scale(1);">
     <div id="ph"></div>
     <div id="greeting">
-        <span id="left">Hi I'm</span>
+        <div class="span" id="left">Hi I'm</div>
         <div id="letter">
             <div></div>
             <img id="q_svg" src="images/proj/Q_out.svg">
             <div></div>
         </div>
-        <span id="right">ian ~</span>
+        <div  class="span" id="right">ian ~</div>
     </div>
-    <div id="intro">A student who loves <b>DESIGN</b> and <b>TECHNOLOGY</b><p/></div>
-</header>
+    <div id="intro"><p>A student who loves <b>DESIGN</b> and <b>TECHNOLOGY</b></p></div>
+</div>
 
 <script src="./scripts/index.js"></script>
 

@@ -1,14 +1,40 @@
-$font-stack: Lato; // Crimson Text;//, Source Sans Pro;
+$font-stack: Playfair Display; //Crimson Text;//, Source Sans Pro;Lato; //
+//$font-stack: Crimson Text;//, Source Sans Pro;Lato; //
+$font-welcome: Colfax;
+$font-logo: 'Saira Extra Condensed', sans-serif;
 $greeting-size: 6vw;
-$intro-size: 3vw;
+$font-special: $font-logo;
 
-$greeting-top: 16vw;
-$intro-top: 30vw;
+$tablet-max: 1200px;
+$nav-width: 180px;
+$mobile-max: 768px;
+$mobile-font-sm: 3.5vw;
+@mixin mobile {
+  @media (max-width: #{$mobile-max - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$mobile-max}) and (max-width: #{$tablet-max - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$tablet-max}) {
+    @content;
+  }
+}
+
+@font-face {
+  font-family: Colfax;
+  font-weight: 600;
+  src: url(../../fonts/colfaxwebbold.woff2) format("woff2")
+}
 
 $m-lightgrey: #f6f6f6;
-div {
-  //border: red 1px solid;
-}
+
 html, body {
   width: 100%;
   height: 100%;
@@ -18,6 +44,10 @@ html, body {
 }
 
 #welcome {
+  @include mobile {
+    display: none;
+  }
+  font-family: $font-welcome;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -25,13 +55,16 @@ html, body {
   text-align: center;
   display: flex;
   flex-direction: column;
+  div {
+    margin: -1px -0.5px;
+  }
   #ph {
     background-color: black;
     height: 35vh;
   }
   #greeting{
     display: flex;
-    span {
+    .span {
       width: 300px;
       flex-grow: 1;
       background-color: black;
@@ -61,28 +94,85 @@ html, body {
     flex-grow: 1;
     padding-top: 20vh;
     font-size: 20px;
+    p {
+      width: 0%;
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 0 auto;
+      animation: typing 8s steps(50, end);
+      animation-delay: 0.5s;
+      animation-fill-mode: forwards;
+    }
   }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
 #main {
   position: absolute;
-  background-color: white;
+  //background-color: white;
   width: 100%;
-  padding-top: 60vh;
+  padding-top: 50vh;
+  @include mobile {
+    padding-top: 50px;
+  }
   #content {
-    .group {
-      height: 900px;
-      padding-top: 100px;
+    section {
+      //background-color: white;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+      h1 {
+        color: white;
+        background-color: black;
+        font-weight: bold;
+        padding: 10px 20px;
+        @include mobile {
+          width: 100%;
+          height: 200px;
+        }
+      }
       .subgroup {
-        // each project
-        padding: 0 60px 0 160px;
-        height: 400px;
-        min-width: 1024px;
         display: flex;
+        padding: 0 0 0 $nav-width;
+        @include mobile {
+          padding: 0 5vw 0 5vw;
+          flex-direction: column;
+        }
+        @include desktop {
+          min-width: $tablet-max;
+        }
+        width: 100%;
         align-items: center;
         justify-content: center;
+        .right-space {
+          max-width: 100px;
+          flex-grow: 1;
+        }
+        .proj-space {
+          flex-grow: 1;
+          max-width: 100px;
+        }
+      }
+      .bg-grey {
+        background: $m-lightgrey;
+      }
+    }
+    #Work {
+      #work_title {
+        height: fit-content;
+      }
+      .subgroup {
+        height: 500px;
         img {
-          width: 400px;
+          width: 470px;
+        }
+        .mobile-img {
+          display: none;
         }
         .proj-text {
           width: 400px;
@@ -93,19 +183,22 @@ html, body {
           padding: 75px 0;
           h2 {
             font-weight: bold;
-
+            font-size: 2em;
           }
           .description {
-            font-size: 1.5em;
+            font-size: 1.2em;
             flex-grow: 1;
             text-align: right;
           }
           .tags {
+            @include mobile {
+              display: none;
+            }
             span {
               margin: 0 0.6em;
             }
             .proj-type {
-              font-weight: bold;
+              //color: palevioletred;
             }
             .design-type {
               color: palevioletred;
@@ -121,9 +214,283 @@ html, body {
             text-align: left;
           }
         }
+        @include mobile {
+          height: fit-content;
+          padding: 10vw 5vw;
+          .desktop-img {
+            display: none;
+          }
+          img, .mobile-img {
+            display: block;
+            width: 100%;
+            object-fit: contain;
+          }
+          .proj-text {
+            width: 100%;
+            align-items: center;
+            padding: 10px 0;
+            h2 {
+              font-size: 5vw;
+            }
+            .description {
+              font-size: 3vw;
+            }
+          }
+        }
       }
-      .bg-grey {
-        background: $m-lightgrey;
+    }
+    #About {
+      display: flex;
+      flex-direction: column;
+      font-size: 1.2em;
+      .subgroup {
+        // each project
+        padding-top: 50px;
+        padding-bottom: 50px;
+        @include mobile {
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+        .title {
+          text-align: center;
+          font-size: 1em;
+          border-bottom: 1px grey solid;
+          width: fit-content;
+          padding: 10px 80px;
+          margin: 50px auto;
+          //align-self: center;
+          font-weight: bold;
+          @include mobile {
+            padding: 10px 10vw;
+            margin: 5vw auto;
+          }
+        }
+      }
+      #about-title {
+        @include mobile {
+          display: none;
+        }
+      }
+      #about1 {
+        img {
+          width: 100px;
+          margin-right: 50px;
+        }
+        p {
+          width: 600px;
+          line-height: 200%;
+          margin-top: 3vw;
+        }
+        @include mobile {
+          img {
+            margin-right: 0;
+          }
+          p {
+            width: 100%;
+            font-size: 3vw;
+          }
+        }
+      }
+      #about2 {
+        #tree-content {
+          flex-direction: column;
+          flex-grow: 1;
+        }
+        #skill-content {
+          display: flex;
+          justify-content: center;
+          .proj-space {
+            flex-grow: 1;
+            max-width: 100px;
+          }
+          #tree {
+            width: 120px;
+            flex-shrink: 0;
+            align-self: center;
+            img {
+              width: 100%;
+            }
+          }
+          .skill-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 550px;
+            width: 300px;
+          }
+          .skill-left {
+            padding: 100px 0;
+            align-items: flex-end;
+            .skill-item {
+              text-align: right;
+            }
+          }
+          .skill-right {
+            align-items: flex-start;
+            .skill-item {
+              text-align: left;
+            }
+          }
+          .skill-item {
+            display: flex;
+            .skill {
+              font-weight: bold;
+            }
+            .skill-detail {
+              font-size: 0.75em;
+              font-style: italic;
+            }
+          }
+          @include mobile {
+            flex-direction: column;
+            #tree {
+              display: none;
+            }
+            .skill-group {
+              height: fit-content;
+              padding: 0 0;
+              align-items: center;
+              .skill-item {
+                padding: 4vw 0;
+              }
+            }
+            .skill-left .skill, .skill-right .skill, .skill-detail {
+              font-size: $mobile-font-sm;
+              color: dimgrey;
+            }
+            #skill-tech, #skill-design {
+              font-family: $font-special;
+              font-weight: bold;
+              font-size: $mobile-font-sm + 1vw;
+            }
+            #skill-design {
+              align-self: flex-start;
+              color: palevioletred;
+            }
+            #skill-tech{
+              align-self: flex-end;
+              color: cornflowerblue;
+            }
+          }
+        }
+      }
+      #about3 {
+        flex-direction: column;
+        #topic-content {
+          display: flex;
+          width: 100%;
+          max-width: 1200px;
+          justify-content: space-around;
+          .topic {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px;
+            .topic-title {
+              font-weight: bold;
+              margin-top: 1em;
+            }
+            .topic-subtitle {
+              font-size: 0.8em;
+              font-style: italic;
+            }
+            img {
+              width: 60px;
+            }
+          }
+          @include mobile {
+            flex-direction: column;
+            align-items: center;
+            .topic {
+              padding: 20px 0;
+            }
+          }
+        }
+      }
+    }
+    #Play {
+      .subgroup {
+        flex-direction: column;
+        text-align: start;
+        @include mobile {
+          h3 {
+            display: none;
+          }
+        }
+        p {
+          max-width: 700px;
+          padding: 50px 0;
+          font-size: 1.2em;
+        }
+        #cards {
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 50px;
+          justify-content: space-evenly;
+          width: 100%;
+          max-width: 1100px;
+          .card {
+            padding: 20px 10px;
+            width: 200px;
+            .image {
+              border: black 10px solid;
+              height: 180px;
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+          .large {
+            width: 400px;
+            .image {
+              height: 380px;
+            }
+          }
+          .mid {
+            padding-left: 90px;
+            .image {
+              width: 300px;
+              height: 300px;
+            }
+          }
+          .high {
+            align-self: flex-start;
+          }
+          .low {
+            align-self: flex-end;
+          }
+          .center {
+            align-self: center;
+          }
+          @include mobile {
+            .card {
+              width: fit-content;
+              padding: 5vw 3vw;
+              .image {
+                width: 35vw;
+                height: 35vw;
+                border: 0;
+                //height: ;
+              }
+              .name {
+                width: 35vw;
+                font-size: small;
+              }
+            }
+            .large, .mid {
+              .image {
+                width: 76vw;
+                height: 76vw;
+              }
+              .name {
+                width: 76vw;
+                font-size: small;
+              }
+            }
+            .high, .low, .center {
+              align-self: center;
+            }
+          }
+        }
       }
     }
   }
@@ -131,25 +498,33 @@ html, body {
 
 /* sidebar */
 .bs-docs-sidebar {
-  padding-left: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  #sidebar.affix {
-    top: 20px;
+  width: $nav-width;
+  padding: 40px 40px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  #name {
+    font-family: $font-logo;
+    font-size: 2.8em;
+    font-weight: bold;
+    border-bottom: 3px black solid;
+    width: fit-content;
+    padding-bottom: 5px;
   }
-  /* all links */
+  #sign {
+    font-size: 0.8em;
+    color: darkgrey;
+    margin-top: auto;
+  }
+  ul {
+    font-size: 1.2em;
+    padding-top: 20px;
+  }
   .nav>li>a {
-    color: #999;
-    border-left: 2px solid transparent;
-    padding: 0.1em 0.2em;
-    font-size: 1.6em;
-    font-weight: 400;
-  }
-
-  /* nested links */
-  .nav .nav>li>a {
-    padding-left: 2em;
-    font-size: 1em;
+    color: grey;
+    padding: 0.1em 0em;
+    //font-weight: 400;
   }
 
   /* active & hover links */
@@ -157,30 +532,47 @@ html, body {
   .nav>li>a:hover,
   .nav>li>a:focus {
     color: black;
-    text-decoration: none;
     background-color: transparent;
-    border-left-color: black;
-  }
-  /* all active links */
-  .nav>.active>a,
-  .nav>.active:hover>a,
-  .nav>.active:focus>a {
-    font-weight: 700;
-  }
-  /* nested active links */
-  .nav .nav>.active>a,
-  .nav .nav>.active:hover>a,
-  .nav .nav>.active:focus>a {
-    font-weight: 500;
   }
 
-  /* hide inactive nested list */
-  .nav ul.nav {
-    display: none;
-  }
-  /* show active nested list */
-  .nav>.active>ul.nav {
-    display: block;
+  @include mobile {
+    background-color: white;
+    width: 100vw;
+    height: 50px;
+    padding: 0 0;
+    flex-direction: row;
+    ul {
+      display: flex;
+      justify-content: flex-start;
+      flex-grow: 1;
+      align-items: center;
+      padding-top: 0;
+      li {
+        text-align: center;
+        flex-grow: 1;
+        height: 100%;
+        margin: 0 5vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    #sign {
+      display: none;
+    }
+    #name {
+      font-size: 1em;
+      border-bottom: 0;
+      padding: 10px 10px;
+    }
+    .nav>.active,
+    .nav>li:hover,
+    .nav>li:focus {
+      color: black;
+      font-weight: bold;
+      background-color: transparent;
+      border-bottom: 2px black solid;
+    }
   }
 }
 
