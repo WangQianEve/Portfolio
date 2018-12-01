@@ -27,8 +27,9 @@
     <!--Main Content -->
     <div id="content">
         <section id="About" class="group">
-            <div id="about-title" class="subgroup" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-center">
-                <h1>ABOUT</h1>
+            <div id="about-title" class="subgroup subgroup-title" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-center">
+                <h1 id="about_white_title" class="white_title">ABOUT</h1>
+                <h1 id="about_black_title" class="black_title">ABOUT</h1>
             </div>
             <div id="about1" class="subgroup">
                 <div id="myPic" data-aos="fade-up" data-aos-duration="1000"  data-aos-anchor-placement="top-center">
@@ -136,8 +137,9 @@
             </div>
         </section>
         <section id="Work" class="group">
-            <div id="work_title" class="subgroup" data-aos="fade-up" data-aos-duration="1000" >
-                <h1>WORK</h1>
+            <div id="work_title" class="subgroup subgroup-title" data-aos="fade-up" data-aos-duration="1000" >
+                <h1 id="work_white_title" class="white_title">WORK</h1>
+                <h1 id="work_black_title" class="black_title">WORK</h1>
             </div>
             <div id="speech_explosion" class="subgroup proj bg-white">
                 <img class="desktop-img" src="./images/proj/speech_explosion.webp" style="object-fit: none" data-aos="fade-up" data-aos-duration="1000"/>
@@ -210,30 +212,41 @@
 
         </section>
         <section id="Play" class="group">
-            <div class="subgroup" data-aos="fade-up" data-aos-duration="1000" >
-                <h1>PLAY</h1>
+            <div id="play_title" class="subgroup subgroup-title" data-aos="fade-up" data-aos-duration="1000" >
+                <h1 id="play_white_title" class="white_title">PLAY</h1>
+                <h1 id="play_black_title" class="black_title">PLAY</h1>
             </div>
             <div class="subgroup">
                 <h3 data-aos="fade-up" data-aos-duration="1000" >Side projects, design practices and others!</h3>
                 <div id="cards">
-                    <div class="card low" id="hi-jack" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
-                        <img class="image" src="images/proj/bubble%20film.png"/>
+                    <div class="card low" data-toggle="modal" data-target="#myModal" id="hi-jack" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+                        <div class="image">
+                            <img style="background-image: url('images/proj/bubble film.png')"/>
+                        </div>
                         <div class="name">Time and Location Based Movie Searcher</div>
                     </div>
-                    <div class="card high" id="bubble" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
-                        <img class="image" src="images/proj/chillcool.png"/>
+                    <div class="card high" id="bubble" data-toggle="modal" data-target="#myModal" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+                        <div class="image">
+                            <img style="background-image: url('images/proj/chillcool.png')"/>
+                        </div>
                         <div class="name">Online Study Tool</div>
                     </div>
-                    <div class="card large" id="labeling" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
-                        <img class="image" src="images/proj/hca.png" />
+                    <div class="card large" id="labeling" data-toggle="modal" data-target="#myModal" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+                        <div class="image">
+                            <img style="background-image: url('images/proj/hca.png')"/>
+                        </div>
                         <div class="name" >Hand Controlled Animation</div>
                     </div>
-                    <div class="card large mid" id="n3" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
-                        <img class="image" src="images/proj/drama.png"/>
+                    <div class="card large mid" id="drama" data-toggle="modal" data-target="#myModal" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+                        <div class="image">
+                            <img style="background-image: url('images/proj/drama.png')"/>
+                        </div>
                         <div class="name">Drama Play: The Twelfth Night</div>
                     </div>
-                    <div class="card high" id="n2" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
-                        <img class="image" src="images/proj/red.png"></img>
+                    <div class="card high" id="red" data-toggle="modal" data-target="#myModal" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+                        <div class="image">
+                            <img style="background-image: url('images/proj/red.png')"/>
+                        </div>
                         <div class="name">Poster Design "Meant To Be"</div>
                     </div>
                 </div>
@@ -271,6 +284,27 @@
         <div  class="span" id="right">ian ~</div>
     </div>
     <div id="intro"><p>A student who loves <b>DESIGN</b> and <b>TECHNOLOGY</b></p></div>
+</div>
+
+<!-- Modals -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Sample Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <img src="images/proj/bubble%20film.png"/>
+                <p>Some descriptive texts.</p>
+            </div>
+            <!--<div class="modal-footer">-->
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+            <!--</div>-->
+        </div>
+
+    </div>
 </div>
 
 <script src="./scripts/index.js"></script>

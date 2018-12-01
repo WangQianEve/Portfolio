@@ -9,6 +9,8 @@ $tablet-max: 1200px;
 $nav-width: 180px;
 $mobile-max: 768px;
 $mobile-font-sm: 3.5vw;
+$invisible-angle: 90deg;
+
 @mixin mobile {
   @media (max-width: #{$mobile-max - 1px}) {
     @content;
@@ -110,6 +112,30 @@ html, body {
   from { width: 0 }
   to { width: 100% }
 }
+@keyframes rotate-back {
+  from { transform: rotateX(0deg) }
+  to { transform: rotateX($invisible-angle) }
+}
+@keyframes rotate-forward {
+  from { transform: rotateX(-$invisible-angle);
+          opacity: 0}
+  to { transform: rotateX(0deg);
+      opacity: 1}
+}
+#work_title {
+  perspective: 200px;
+  -webkit-perspective: 200px;
+}
+.rotate-back {
+  animation: rotate-back 1s;
+  transform-style: preserve-3d;
+  animation-fill-mode: forwards;
+}
+.rotate-forward {
+  animation: rotate-forward 1s;
+  transform-style: preserve-3d;
+  animation-fill-mode: forwards;
+}
 
 #main {
   position: absolute;
@@ -126,16 +152,6 @@ html, body {
       padding-bottom: 50px;
       display: flex;
       flex-direction: column;
-      h1 {
-        color: white;
-        background-color: black;
-        font-weight: bold;
-        padding: 10px 20px;
-        @include mobile {
-          width: 100%;
-          height: 200px;
-        }
-      }
       .subgroup {
         display: flex;
         padding: 0 0 0 $nav-width;
@@ -156,6 +172,34 @@ html, body {
         .proj-space {
           flex-grow: 1;
           max-width: 100px;
+        }
+      }
+      .subgroup-title {
+        padding-left: 0;
+        margin-left: $nav-width;
+        height: 60px;
+        align-self: center;
+        h1 {
+          transform-origin: 50% 50% -30px;
+          margin: 0 0;
+          font-weight: bold;
+          padding: 10px 20px;
+          position: absolute;
+          @include mobile {
+            width: 100%;
+            height: 200px;
+          }
+        }
+        .black_title {
+          opacity: 0;
+          color: white;
+          background-color: black;
+          transform: rotateX(-$invisible-angle);
+        }
+        .white_title {
+          color: black;
+          background-color: white;
+          border: 1px black solid;
         }
       }
       .bg-grey {
@@ -341,6 +385,9 @@ html, body {
               font-style: italic;
             }
           }
+          #skill-design, #skill-tech {
+            display: none;
+          }
           @include mobile {
             flex-direction: column;
             #tree {
@@ -359,6 +406,7 @@ html, body {
               color: dimgrey;
             }
             #skill-tech, #skill-design {
+              display: flex;
               font-family: $font-special;
               font-weight: bold;
               font-size: $mobile-font-sm + 1vw;
@@ -430,15 +478,26 @@ html, body {
           width: 100%;
           max-width: 1100px;
           .card {
+            cursor: pointer;
             padding: 20px 10px;
             width: 200px;
             .image {
               border: black 10px solid;
               height: 180px;
               width: 100%;
-              object-fit: cover;
+              overflow: hidden;
+              img {
+                width: 100%;
+                height: 100%;
+                background-position: center;
+                background-size: cover;
+                transition: all .5s;
+              }
             }
           }
+          .card:hover img{
+            transform: scale(1.2);
+          };
           .large {
             width: 400px;
             .image {
@@ -496,6 +555,11 @@ html, body {
   }
 }
 
+.modal-content {
+  img {
+    width: 100%;
+  }
+}
 /* sidebar */
 .bs-docs-sidebar {
   width: $nav-width;

@@ -3,8 +3,27 @@ let visible;
 let transform_origin;
 
 AOS.init();
+var controller = new ScrollMagic.Controller();
 
 window.onload = function() {
+    var scene1 = new ScrollMagic.Scene({triggerElement: "#work_title", triggerHook: 'onEnter', offset: 200}) //, triggerOffset: 1000, duration: 300
+        .setClassToggle("#work_white_title", "rotate-back")
+        .addTo(controller);
+    var scene2 = new ScrollMagic.Scene({triggerElement: "#work_title", triggerHook: 'onEnter', offset: 200})
+        .setClassToggle("#work_black_title", "rotate-forward")
+        .addTo(controller);
+    var scene1 = new ScrollMagic.Scene({triggerElement: "#about_title", triggerHook: 'onEnter', offset: 200}) //, triggerOffset: 1000, duration: 300
+        .setClassToggle("#about_white_title", "rotate-back")
+        .addTo(controller);
+    var scene2 = new ScrollMagic.Scene({triggerElement: "#about_title", triggerHook: 'onEnter', offset: 200})
+        .setClassToggle("#about_black_title", "rotate-forward")
+        .addTo(controller);
+    var scene1 = new ScrollMagic.Scene({triggerElement: "#play_title", triggerHook: 'onEnter', offset: 200}) //, triggerOffset: 1000, duration: 300
+        .setClassToggle("#play_white_title", "rotate-back")
+        .addTo(controller);
+    var scene2 = new ScrollMagic.Scene({triggerElement: "#play_title", triggerHook: 'onEnter', offset: 200})
+        .setClassToggle("#play_black_title", "rotate-forward")
+        .addTo(controller);
     if (document.documentElement.clientWidth <= 768) {
         return;
     }
