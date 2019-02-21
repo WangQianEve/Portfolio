@@ -5,7 +5,7 @@ let transform_origin;
 AOS.init();
 var controller = new ScrollMagic.Controller();
 
-window.onload = function() {
+window.onload = function () {
     var scene1 = new ScrollMagic.Scene({triggerElement: "#work_title", triggerHook: 'onEnter', offset: 200}) //, triggerOffset: 1000, duration: 300
         .setClassToggle("#work_white_title", "rotate-back")
         .addTo(controller);
@@ -29,13 +29,19 @@ window.onload = function() {
     }
     updateWelcome();
     initVisibility();
-    window.addEventListener("scroll", function(e) {
+    window.addEventListener("scroll", function (e) {
         let vals = checkVisibility();
         let cont = vals[0];
         let scrollPercentage = vals[1];
-        if (!cont) {return;}
+        if (!cont) {
+            return;
+        }
         let scale = 1 + scrollPercentage * ratio;
-        $('#welcome').css({"transform":"scale("+scale+")", "transform-origin":transform_origin.x+"px "+transform_origin.y+"px"});
+        $('#welcome').css({
+            "transform": "scale(" + scale + ")",
+            "transform-origin": transform_origin.x + "px " + transform_origin.y + "px"
+        });
+        // console.log(transform_origin, "scale", scale);
     });
     window.addEventListener("resize", updateWelcome);
 };
@@ -44,8 +50,9 @@ let updateWelcome = function () {
     let q = $('#q_svg');
     let q_pos = q.position();
     let q_size = {height: q.height(), width: q.width()};
-    transform_origin = {x:q_pos.left+q_size.width*0.55, y:(q_pos.top+q_size.height*0.78)};
-    ratio = $(window).height()/6;
+    transform_origin = {x: q_pos.left + q_size.width * 0.55, y: (q_pos.top + q_size.height * 0.78)};
+    ratio = $(window).height() / 6;
+    // console.log(transform_origin, "ratio", ratio);
 };
 
 let initVisibility = function () {
@@ -58,8 +65,14 @@ let initVisibility = function () {
     }
 };
 
+let getScrollTop = function () {
+    return Math.max(0, window.scrollY || window.pageYOffset || document.body.scrollTop
+        + (document.documentElement && document.documentElement.scrollTop || 0));
+};
+
 let checkVisibility = function () {
-    let scrollPercentage = document.documentElement.scrollTop / (0.5 * document.documentElement.clientHeight);
+    let scrollPercentage = getScrollTop() / (0.5 * document.documentElement.clientHeight);
+    // console.log(document.documentElement.scrollTop, document.documentElement.clientHeight);
     if (scrollPercentage >= 1) {
         if (visible) {
             visible = false;
